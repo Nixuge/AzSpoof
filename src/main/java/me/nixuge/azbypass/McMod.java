@@ -2,7 +2,8 @@ package me.nixuge.azbypass;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.nixuge.azbypass.command.commands.AzBypass;
+import me.nixuge.azbypass.command.commands.AzBypassCommand;
+import me.nixuge.azbypass.command.commands.AzBypassTypeCommand;
 import me.nixuge.azbypass.config.Cache;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.config.Configuration;
@@ -44,6 +45,7 @@ public class McMod {
 
     @Mod.EventHandler
     public void init(final FMLInitializationEvent event) {
-        ClientCommandHandler.instance.registerCommand(new AzBypass(this.cache));
+        ClientCommandHandler.instance.registerCommand(new AzBypassCommand(this.cache));
+        ClientCommandHandler.instance.registerCommand(new AzBypassTypeCommand(this.cache));
     }
 }

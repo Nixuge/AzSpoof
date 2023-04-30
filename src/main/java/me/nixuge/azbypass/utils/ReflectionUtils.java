@@ -1,4 +1,4 @@
-package me.nixuge.azbypass.utils.reflection;
+package me.nixuge.azbypass.utils;
 
 import java.lang.reflect.Field;
 import java.util.Map;

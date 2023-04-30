@@ -11,10 +11,10 @@ import me.nixuge.azbypass.MessageBuilder;
 import me.nixuge.azbypass.command.AbstractCommand;
 import me.nixuge.azbypass.config.Cache;
 
-public class AzBypass extends AbstractCommand {
+public class AzBypassCommand extends AbstractCommand {
     private final Cache cache;
 
-    public AzBypass(final Cache cache) {
+    public AzBypassCommand(final Cache cache) {
         super("azbypass");
 
         this.cache = cache;

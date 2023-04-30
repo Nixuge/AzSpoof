@@ -12,24 +12,16 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.concurrent.GenericFutureListener;
 import me.nixuge.azbypass.McMod;
 import me.nixuge.azbypass.config.Cache;
-import me.nixuge.azbypass.utils.reflection.ReflectionUtils;
+import me.nixuge.azbypass.utils.ReflectionUtils;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.handshake.client.C00Handshake;
-// import net.minecraft.network.play.client.CPacketKeepAlive;
-// import net.minecraft.network.play.server.SPacketKeepAlive;
 
 @Mixin(NetworkManager.class)
 public class NetworkManagerMixin {
     @Inject(method = "channelRead0", at = @At("HEAD"), cancellable = true)
     private void onChannelRead(ChannelHandlerContext context, Packet<?> packet, CallbackInfo callbackInfo) {
-    // if (packet instanceof SPacketKeepAlive) {
-    //     SPacketKeepAlive pack = (SPacketKeepAlive)packet;    
-    //     System.out.println("KEEPALIVE RECEIVED!!!!");
-    //     System.out.println("W ID " + pack.getId());
-    // }
-    
-        //     if (packet instanceof SPacketChunkData
+    //     if (packet instanceof SPacketChunkData
     //     || packet instanceof SPacketEntityStatus
     //     || packet instanceof SPacketChat 
     //     || packet instanceof SPacketPlayerPosLook
@@ -105,12 +97,6 @@ public class NetworkManagerMixin {
         if (!cache.isAzBypass()) {
             return;
         }
-        
-        // if (inPacket instanceof CPacketKeepAlive) {
-        //     CPacketKeepAlive pack = (CPacketKeepAlive)inPacket;
-        //     System.out.println("KEEPALIVE SENT BACK!!!!");
-        //     System.out.println("W ID " + pack.getKey());
-        // }
 
         if (inPacket instanceof C00Handshake) {
             C00Handshake pack = (C00Handshake)inPacket;
@@ -119,12 +105,16 @@ public class NetworkManagerMixin {
                 f.setAccessible(true);
                 String ip = (String)f.get(pack);
                 ip = ip.replace("\0FML\0", "");
-
-                // ip += "\0PAC00006\0"; // Bypasses the provided example plugin
-                ip += "\0PAC\0"; // Bypasses Funcraft
-                // Note: all strings starting with PAC bypass funcraft
-                // 5 nums after = loading the "new" az launcher, obf packets
-                // anything else (nothing or other) = old, working just fine
+                
+                switch (cache.getBypassType()) {
+                    case PACALONE:
+                        ip += "\0PAC\0";
+                        break;
+                    case PAC5DIGIT:
+                        ip += "\0PAC00006\0";
+                    default:
+                        break;
+                }
 
                 f.set(pack, ip);
             } catch (Exception e) {

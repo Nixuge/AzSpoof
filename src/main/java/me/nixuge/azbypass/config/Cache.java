@@ -3,10 +3,13 @@ package me.nixuge.azbypass.config;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
 public class Cache {
     @Setter
-    @Getter
     private boolean azBypass = false;
-    // TODO: lasting config
-    // Too lazy for now
+
+    public void setBypassMode(String mode) {
+        this.bypassType = mode.contains("5") ? BypassType.PAC5DIGIT : BypassType.PACALONE;
+    }
+    private BypassType bypassType = BypassType.PACALONE;
 }
