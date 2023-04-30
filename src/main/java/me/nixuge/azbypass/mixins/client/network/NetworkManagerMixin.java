@@ -125,6 +125,7 @@ public class NetworkManagerMixin {
 
     @Inject(method = "exceptionCaught", at = @At("HEAD"), cancellable = true)
     private void exceptionCaught(ChannelHandlerContext p_exceptionCaught_1_, Throwable p_exceptionCaught_2_, CallbackInfo callbackInfo) throws Exception {
-        callbackInfo.cancel();
+        if (cache.isAzBypass()) 
+            callbackInfo.cancel();
     }
 }
