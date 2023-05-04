@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 public class Cache {
     @Setter
-    private boolean azBypass = false;
+    private boolean azBypass = true;
 
     public void setBypassMode(String mode) {
         this.bypassType = mode.contains("5") ? BypassType.PAC5DIGIT : BypassType.PACALONE;
