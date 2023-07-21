@@ -5,11 +5,6 @@ import java.util.Map;
 
 import com.google.common.collect.Maps;
 
-/* 
- * This class was taken in a good part from Pokechu22's WorldDownloader.
- * Credits there.
- */
-
 public class ReflectionUtils {
     static final Map<Class<?>, Map<Class<?>, Field>> CACHE = Maps.newHashMap();
 
