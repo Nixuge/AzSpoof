@@ -5,7 +5,7 @@
   "mixins": [],
   "client": [
     "client.network.NetworkManagerMixin",
-    "client.packets.C00HandshakeMixin",
+    "client.packets.C00HandshakeMixin"
   ],
   "server": []
 }

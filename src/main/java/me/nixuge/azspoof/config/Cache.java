@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 public class Cache {
     @Setter
-    private boolean azSpoof = true;
+    private boolean azSpoof = false;
 
     public void setSpoofMode(String mode) {
         this.spoofType = mode.contains("5") ? SpoofType.PAC5DIGIT : SpoofType.PACALONE;
