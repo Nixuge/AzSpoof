@@ -5,7 +5,6 @@ import lombok.Setter;
 import me.nixuge.azbypass.command.commands.AzBypassCommand;
 import me.nixuge.azbypass.command.commands.AzBypassTypeCommand;
 import me.nixuge.azbypass.config.Cache;
-import me.nixuge.azbypass.utils.Test5Packet.PacketHandler;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -18,7 +17,6 @@ import java.io.File;
         modid = McMod.MOD_ID,
         name = McMod.NAME,
         version = McMod.VERSION,
-        guiFactory = "me.nixuge.azbypass.gui.GuiFactory",
         clientSideOnly = true
 )
 @Getter
@@ -48,7 +46,5 @@ public class McMod {
     public void init(final FMLInitializationEvent event) {
         ClientCommandHandler.instance.registerCommand(new AzBypassCommand(this.cache));
         ClientCommandHandler.instance.registerCommand(new AzBypassTypeCommand(this.cache));
-
-        PacketHandler.initPackets();
     }
 }
