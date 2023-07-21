@@ -1,4 +1,4 @@
-package me.nixuge.azbypass;
+package me.nixuge.azspoof;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;

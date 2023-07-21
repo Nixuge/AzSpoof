@@ -1,4 +1,4 @@
-package me.nixuge.azbypass.utils;
+package me.nixuge.azspoof.utils;
 
 import java.lang.reflect.Field;
 import java.util.Map;
@@ -45,7 +45,7 @@ public class ReflectionUtils {
                     return f;
                 } catch (Exception e) {
                     throw new RuntimeException(
-                            "AzBypass: Couldn't get private Field of type \""
+                            "AzSpoof: Couldn't get private Field of type \""
                                     + typeOfField + "\" from class \"" + typeOfClass
                                     + "\" !", e);
                 }
@@ -53,7 +53,7 @@ public class ReflectionUtils {
         }
 
         throw new RuntimeException(
-                "AzBypass: Couldn't find any Field of type \""
+                "AzSpoof: Couldn't find any Field of type \""
                         + typeOfField + "\" from class \"" + typeOfClass
                         + "\" !");
     }

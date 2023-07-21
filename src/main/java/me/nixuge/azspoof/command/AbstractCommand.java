@@ -1,4 +1,4 @@
-package me.nixuge.azbypass.command;
+package me.nixuge.azspoof.command;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
@@ -9,8 +9,8 @@ import net.minecraft.util.text.TextFormatting;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.nixuge.azbypass.McMod;
-import me.nixuge.azbypass.MessageBuilder;
+import me.nixuge.azspoof.McMod;
+import me.nixuge.azspoof.MessageBuilder;
 
 public abstract class AbstractCommand extends CommandBase {
     private final String name;

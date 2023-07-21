@@ -1,10 +1,10 @@
-package me.nixuge.azbypass;
+package me.nixuge.azspoof;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.nixuge.azbypass.command.commands.AzBypassCommand;
-import me.nixuge.azbypass.command.commands.AzBypassTypeCommand;
-import me.nixuge.azbypass.config.Cache;
+import me.nixuge.azspoof.command.commands.AzSpoofCommand;
+import me.nixuge.azspoof.command.commands.AzSpoofTypeCommand;
+import me.nixuge.azspoof.config.Cache;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -22,8 +22,8 @@ import java.io.File;
 @Getter
 @Setter
 public class McMod {
-    public static final String MOD_ID = "azbypass";
-    public static final String NAME = "AzBypass";
+    public static final String MOD_ID = "azspoof";
+    public static final String NAME = "AzSpoof";
     public static final String VERSION = "1.0.0";
 
     
@@ -44,7 +44,7 @@ public class McMod {
 
     @Mod.EventHandler
     public void init(final FMLInitializationEvent event) {
-        ClientCommandHandler.instance.registerCommand(new AzBypassCommand(this.cache));
-        ClientCommandHandler.instance.registerCommand(new AzBypassTypeCommand(this.cache));
+        ClientCommandHandler.instance.registerCommand(new AzSpoofCommand(this.cache));
+        ClientCommandHandler.instance.registerCommand(new AzSpoofTypeCommand(this.cache));
     }
 }

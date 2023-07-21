@@ -1,12 +1,11 @@
 {
   "compatibilityLevel": "JAVA_8",
-  "package": "me.nixuge.azbypass.mixins",
-  "refmap": "refmap.azbypass.json",
+  "package": "me.nixuge.azspoof.mixins",
+  "refmap": "refmap.azspoof.json",
   "mixins": [],
   "client": [
     "client.network.NetworkManagerMixin",
     "client.packets.C00HandshakeMixin",
-    "client.network.NettyPacketDecoderMixin"
   ],
   "server": []
 }

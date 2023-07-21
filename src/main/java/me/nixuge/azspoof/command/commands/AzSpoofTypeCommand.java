@@ -1,4 +1,4 @@
-package me.nixuge.azbypass.command.commands;
+package me.nixuge.azspoof.command.commands;
 
 
 import net.minecraft.command.ICommandSender;
@@ -7,15 +7,15 @@ import net.minecraft.util.text.TextFormatting;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.nixuge.azbypass.MessageBuilder;
-import me.nixuge.azbypass.command.AbstractCommand;
-import me.nixuge.azbypass.config.Cache;
+import me.nixuge.azspoof.MessageBuilder;
+import me.nixuge.azspoof.command.AbstractCommand;
+import me.nixuge.azspoof.config.Cache;
 
-public class AzBypassTypeCommand extends AbstractCommand {
+public class AzSpoofTypeCommand extends AbstractCommand {
     private final Cache cache;
 
-    public AzBypassTypeCommand(final Cache cache) {
-        super("azbypasstype");
+    public AzSpoofTypeCommand(final Cache cache) {
+        super("azspooftype");
 
         this.cache = cache;
     }
@@ -23,14 +23,14 @@ public class AzBypassTypeCommand extends AbstractCommand {
     @Override
     public List<String> getCommandAliases() {
         ArrayList<String> al = new ArrayList<>();
-        al.add("bypasstype");
+        al.add("spooftype");
         return al;
     }
 
     @Override
     public void onCommand(final ICommandSender sender, final String[] args) {
         String mode = (args.length == 0) ? "NODIGIT" : args[0];
-        this.cache.setBypassMode(mode);
-        this.tell(new MessageBuilder("Set AzBypass mode to " + this.cache.getBypassType(), TextFormatting.GRAY));
+        this.cache.setSpoofMode(mode);
+        this.tell(new MessageBuilder("Set AzSpoof mode to " + this.cache.getSpoofType(), TextFormatting.GRAY));
     }
 }

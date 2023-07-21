@@ -1,4 +1,4 @@
-package me.nixuge.azbypass.mixins.client.network;
+package me.nixuge.azspoof.mixins.client.network;
 
 import java.lang.reflect.Field;
 import java.util.concurrent.Future;
@@ -10,9 +10,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.concurrent.GenericFutureListener;
-import me.nixuge.azbypass.McMod;
-import me.nixuge.azbypass.config.Cache;
-import me.nixuge.azbypass.utils.ReflectionUtils;
+import me.nixuge.azspoof.McMod;
+import me.nixuge.azspoof.config.Cache;
+import me.nixuge.azspoof.utils.ReflectionUtils;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.handshake.client.C00Handshake;
@@ -94,7 +94,7 @@ public class NetworkManagerMixin {
 
     @Inject(method = "dispatchPacket", at = @At("HEAD"), cancellable = true)
     private void onDispatchPacket(final Packet<?> inPacket, final GenericFutureListener <? extends Future <? super Void >> [] futureListeners, CallbackInfo callbackInfo) {
-        if (!cache.isAzBypass()) {
+        if (!cache.isAzSpoof()) {
             return;
         }
 
@@ -106,7 +106,7 @@ public class NetworkManagerMixin {
                 String ip = (String)f.get(pack);
                 ip = ip.replace("\0FML\0", "");
                 
-                switch (cache.getBypassType()) {
+                switch (cache.getSpoofType()) {
                     case PACALONE:
                         ip += "\0PAC\0";
                         break;
@@ -125,7 +125,7 @@ public class NetworkManagerMixin {
 
     @Inject(method = "exceptionCaught", at = @At("HEAD"), cancellable = true)
     private void exceptionCaught(ChannelHandlerContext p_exceptionCaught_1_, Throwable p_exceptionCaught_2_, CallbackInfo callbackInfo) throws Exception {
-        if (cache.isAzBypass()) 
+        if (cache.isAzSpoof()) 
             callbackInfo.cancel();
     }
 }

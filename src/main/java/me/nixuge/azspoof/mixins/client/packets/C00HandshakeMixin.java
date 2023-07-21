@@ -1,4 +1,4 @@
-package me.nixuge.azbypass.mixins.client.packets;
+package me.nixuge.azspoof.mixins.client.packets;
 
 import java.io.IOException;
 
