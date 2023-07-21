@@ -10,7 +10,10 @@ import net.minecraft.network.EnumConnectionState;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.handshake.client.C00Handshake;
 
-// Prolly unneeded
+// This prolly looks unneeded, and indeed it SHOULD be
+// Except Forge really likes to replace some things in the Vanilla
+// code, which break the entire mod if for some reason I don't
+// mixin into this class.
 @Mixin(C00Handshake.class)
 public class C00HandshakeMixin {
     @Shadow private int protocolVersion;
