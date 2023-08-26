@@ -1,6 +1,20 @@
 # AzSpoof
 A simple 1.9.4 Forge mod to make Funcraft & other servers think you're on the AZ Launcher.
 
+# EOL
+Funcraft has officially been shutdown as of 26/08/2023 (22h UTC+1, french time), rendering this mod useless.
+
+Even tho this server really was kind of a shithole sometimes (bad infra, staff not super great, kinda abandonned), I've really enjoyed playing it for the last ~8 (not sure exactly how much, probably a bit more?) years, and it's been a reference for me and a bunch of other people.
+
+From pvping to the freecube to doing the funny hacker god back to playing Skywars (the best Skywars btw) with a bunch of friends, I've done basically everything you can do on a minigames server.
+
+Unlike other Funcraft players I don't plan to stop playing the game itself.
+However, after 11 years and about 4/5 years of it being almost abandonned, it's finally time to let the best French server go. 
+
+Thanks to every other Funcraft player for all of those amazing years.
+
+![image](https://github.com/Nixuge/AzSpoof/assets/33488576/09c1b0e8-e02d-4c9d-9c97-4d415df037b9)
+
 # What are Funcraft and the AZ Launcher
 Funcraft is a (1.9.4) French server, and the AZ Launcher is their dedicated launcher. It's not needed to play on Funcraft, and indeed 1.9.0->1.11.2 clients work just about fine, but it's greatly pushed and can improve the gameplay experience a bit.
 
