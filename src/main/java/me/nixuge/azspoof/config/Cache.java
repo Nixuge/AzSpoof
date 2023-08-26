@@ -6,7 +6,7 @@ import lombok.Setter;
 @Getter
 public class Cache {
     @Setter
-    private boolean azSpoof = true;
+    private boolean azSpoof = false;
     @Setter
     private boolean savePackets = false;
 
